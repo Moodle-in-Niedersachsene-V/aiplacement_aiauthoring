@@ -10,6 +10,8 @@
 # kein templates/, daher ohne mustache-Schritt und ohne Upload der
 # AMD-Build-Dateien. Zusaetzliche Matrixzeile MOODLE_503_STABLE
 # (Pilot laeuft auf Moodle 5.3).
+# Datenbank-Images: MariaDB 11.4 und PostgreSQL 17, weil Moodle 5.3 diese
+# Mindestversionen verlangt (5.1 und 5.2 laufen damit ebenfalls).
 ##############################################################################
 
 name: Moodle Plugin CI
@@ -27,7 +29,7 @@ jobs:
 
     services:
       postgres:
-        image: postgres:16
+        image: postgres:17
         env:
           POSTGRES_USER: 'postgres'
           POSTGRES_HOST_AUTH_METHOD: 'trust'
@@ -40,7 +42,7 @@ jobs:
           --health-retries 3
 
       mariadb:
-        image: mariadb:10.11
+        image: mariadb:11.4
         env:
           MYSQL_USER: 'root'
           MYSQL_ALLOW_EMPTY_PASSWORD: "true"

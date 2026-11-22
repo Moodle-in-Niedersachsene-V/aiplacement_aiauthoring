@@ -18,6 +18,7 @@ namespace aiplacement_aiauthoring;
 
 use core_ai\ai_test_trait;
 use core_ai\aiactions\generate_text;
+use PHPUnit\Framework\Attributes\CoversClass;
 
 defined('MOODLE_INTERNAL') || die();
 require_once(__DIR__ . '/../../../tests/ai_test_trait.php');
@@ -28,9 +29,10 @@ require_once(__DIR__ . '/../../../tests/ai_test_trait.php');
  * @package    aiplacement_aiauthoring
  * @copyright  2026 Moodle in Niedersachsen e. V.
  * @license    https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
- * @covers     \aiplacement_aiauthoring\generator
- * @covers     \aiplacement_aiauthoring\placement
  */
+#[CoversClass(generator::class)]
+#[CoversClass(placement::class)]
+#[CoversClass(generation_result::class)]
 final class generator_test extends \advanced_testcase {
     use ai_test_trait;
 

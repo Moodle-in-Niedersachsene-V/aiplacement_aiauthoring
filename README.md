@@ -15,7 +15,7 @@ provider directly.
 ## Requirements
 
 - Moodle 5.1 to 5.3
-- PHP 8.2, 8.3 or 8.4
+- PHP 8.2, 8.3 or 8.4 (Moodle 5.3 itself requires PHP 8.3 or later)
 - MariaDB, MySQL or PostgreSQL
 - At least one enabled AI provider with the action *Generate text*
   (for example Anthropic Claude from Moodle 5.3, OpenAI, Azure AI, Gemini, Amazon Bedrock)
